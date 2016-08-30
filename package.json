@@ -1,0 +1,30 @@
+{
+  "name": "eslint-plugin-react-with-styles",
+  "version": "0.0.0",
+  "description": "ESLint plugin for react-with-styles",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/airbnb/eslint-plugin-react-with-styles.git"
+  },
+  "keywords": [
+    "eslint",
+    "react",
+    "react-with-styles",
+    "eslint-plugin",
+    "eslintplugin"
+  ],
+  "author": "Joe Lencioni <joe.lencioni@airbnb.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/airbnb/eslint-plugin-react-with-styles/issues"
+  },
+  "homepage": "https://github.com/airbnb/eslint-plugin-react-with-styles#readme"
+}
