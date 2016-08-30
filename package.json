@@ -8,7 +8,8 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint .",
+    "test": "npm run --silent lint"
   },
   "repository": {
     "type": "git",
@@ -26,5 +27,13 @@
   "bugs": {
     "url": "https://github.com/airbnb/eslint-plugin-react-with-styles/issues"
   },
-  "homepage": "https://github.com/airbnb/eslint-plugin-react-with-styles#readme"
+  "homepage": "https://github.com/airbnb/eslint-plugin-react-with-styles#readme",
+  "peerDependencies": {
+    "eslint": "^2.0.0 || ^3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.4.0",
+    "eslint-config-airbnb-base": "^5.0.3",
+    "eslint-plugin-import": "^1.14.0"
+  }
 }
