@@ -2,14 +2,15 @@
   "name": "eslint-plugin-react-with-styles",
   "version": "0.0.0",
   "description": "ESLint plugin for react-with-styles",
-  "main": "index.js",
+  "main": "lib/index.js",
   "directories": {
     "doc": "docs",
     "test": "tests"
   },
   "scripts": {
     "lint": "eslint .",
-    "test": "npm run --silent lint"
+    "mocha": "mocha --recursive",
+    "test": "npm run --silent lint && npm run --silent mocha -- tests"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,7 @@
   "devDependencies": {
     "eslint": "^3.4.0",
     "eslint-config-airbnb-base": "^5.0.3",
-    "eslint-plugin-import": "^1.14.0"
+    "eslint-plugin-import": "^1.14.0",
+    "mocha": "^3.0.2"
   }
 }
