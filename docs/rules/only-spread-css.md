@@ -38,7 +38,7 @@ import { css } from 'withStyles';
 
 ```jsx
 import { css } from 'withStyles';
-<div {...css(styles.foo) { color: 'red' }} />
+<div {...css(styles.foo, { color: 'red' })} />
 ```
 
 ## Known limitations
@@ -47,7 +47,7 @@ import { css } from 'withStyles';
 
   ```jsx
   const bar = { className: 'foo' };
-  <div {...css(styles.foo} {...bar} />
+  <div {...css(styles.foo)} {...bar} />
   ```
 
 - Does not keep track of assigning the `css()` function to a different variable.
