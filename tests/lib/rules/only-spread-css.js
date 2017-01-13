@@ -3,6 +3,7 @@
 *   `style` props.
 * @author Joe Lencioni
 */
+
 'use strict';
 
 const rule = require('../../../lib/rules/only-spread-css');

@@ -4,6 +4,13 @@
     "node": true
   },
   "rules": {
-    "strict": 0
+    "strict": 0,
+    "comma-dangle": [2, {
+      "arrays": "always-multiline",
+      "objects": "always-multiline",
+      "imports": "always-multiline",
+      "exports": "always-multiline",
+      "functions": "ignore",
+    }],
   }
 }

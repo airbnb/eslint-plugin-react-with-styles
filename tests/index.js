@@ -7,13 +7,13 @@ const fs = require('fs');
 const path = require('path');
 
 const ruleFiles = fs.readdirSync(path.resolve(__dirname, '../lib/rules/'))
-  .map((f) => path.basename(f, '.js'));
+  .map(f => path.basename(f, '.js'));
 
 describe('all rule files are exported by the plugin', () => {
   ruleFiles.forEach((ruleName) => {
     it(`exports ${ruleName}`, () => {
       expect(plugin.rules[ruleName])
-        // eslint-disable-next-line global-require
+        // eslint-disable-next-line global-require, import/no-dynamic-require
         .to.eql(require(path.join('../lib/rules', ruleName))
       );
     });
