@@ -60,6 +60,40 @@ ruleTester.run('no-unused-styles', rule, {
       code: `
         import { css } from 'withStyles';
 
+        function Foo({ styles }) {
+          return (
+            <div {...css(styles['foo'])} />
+          );
+        }
+
+        export default withStyles(() => ({
+          foo: {},
+        }))(Foo);
+      `.trim(),
+    },
+
+    {
+      parserOptions,
+      code: `
+        import { css } from 'withStyles';
+
+        function Foo({ styles }) {
+          return (
+            <div {...css(styles[\`foo\`])} />
+          );
+        }
+
+        export default withStyles(() => ({
+          foo: {},
+        }))(Foo);
+      `.trim(),
+    },
+
+    {
+      parserOptions,
+      code: `
+        import { css } from 'withStyles';
+
         function Foo(props) {
           return (
             <div {...css(props.styles.foo)} />
