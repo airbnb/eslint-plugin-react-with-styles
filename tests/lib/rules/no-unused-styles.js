@@ -25,7 +25,16 @@ ruleTester.run('no-unused-styles', rule, {
     {
       parserOptions,
       code: `
+        import { css } from 'withStyles';
         <div className="foo" />
+      `.trim(),
+    },
+
+    {
+      parserOptions,
+      code: `
+        import { css } from 'withStyles';
+        const foo = props.styles;
       `.trim(),
     },
 
