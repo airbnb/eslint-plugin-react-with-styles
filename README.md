@@ -12,6 +12,7 @@ ESLint plugin for [react-with-styles][react-with-styles].
 
 ## Rules
 
+- [react-with-styles/no-unused-styles](docs/rules/no-unused-styles.md): Require all styles that are defined to be referenced
 - [react-with-styles/only-spread-css](docs/rules/only-spread-css.md): Require that `css()` is only spread into a JSX element without a `className` or `style` prop
 
 [package-url]: https://npmjs.org/package/eslint-plugin-react-with-styles
