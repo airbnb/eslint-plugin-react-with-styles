@@ -46,7 +46,5 @@ export default withStyles(() => ({
 
 - Will not detect styles defined by computed properties.
 - Will not detect styles defined by object spread.
-- Will not detect styles used by Literal reference (e.g. `styles['foo']` or
-  `props['styles'].foo`).
 - Will not handle files that contain multiple styled components very well.
 - Will not handle `styles` prop that has been renamed to something else.
