@@ -4,7 +4,7 @@ The shape of the object returned by the `css()` function from withStyles needs t
 
 If you need to add some inline styles (e.g. a style that depends on a non-enumerable value of a prop), `css()` can accept plain objects (example below).
 
-## Rule Details
+## Rule details
 
 The following patterns are considered warnings:
 
