@@ -130,6 +130,23 @@ ruleTester.run('no-unused-styles', rule, {
 
         function Foo(props) {
           return (
+            <div {...css(props['styles'].foo)} />
+          );
+        }
+
+        export default withStyles(() => ({
+          foo: {},
+        }))(Foo);
+      `.trim(),
+    },
+
+    {
+      parserOptions,
+      code: `
+        import { css } from 'withStyles';
+
+        function Foo(props) {
+          return (
             <div {...css(props['styles']['foo'])} />
           );
         }
@@ -148,6 +165,23 @@ ruleTester.run('no-unused-styles', rule, {
         function Foo(props) {
           return (
             <div {...css(props.styles[\`foo\`])} />
+          );
+        }
+
+        export default withStyles(() => ({
+          foo: {},
+        }))(Foo);
+      `.trim(),
+    },
+
+    {
+      parserOptions,
+      code: `
+        import { css } from 'withStyles';
+
+        function Foo(props) {
+          return (
+            <div {...css(props[\`styles\`].foo)} />
           );
         }
 
@@ -232,6 +266,23 @@ ruleTester.run('no-unused-styles', rule, {
 
         class Foo extends React.Component {
           render() {
+            return <div {...css(this['props'].styles['foo'])} />;
+          }
+        }
+
+        export default withStyles(() => ({
+          foo: {},
+        }))(Foo);
+      `.trim(),
+    },
+
+    {
+      parserOptions,
+      code: `
+        import { css } from 'withStyles';
+
+        class Foo extends React.Component {
+          render() {
             return <div {...css(this['props']['styles']['foo'])} />;
           }
         }
@@ -267,6 +318,23 @@ ruleTester.run('no-unused-styles', rule, {
         class Foo extends React.Component {
           render() {
             return <div {...css(this.props[\`styles\`][\`foo\`])} />;
+          }
+        }
+
+        export default withStyles(() => ({
+          foo: {},
+        }))(Foo);
+      `.trim(),
+    },
+
+    {
+      parserOptions,
+      code: `
+        import { css } from 'withStyles';
+
+        class Foo extends React.Component {
+          render() {
+            return <div {...css(this[\`props\`].styles[\`foo\`])} />;
           }
         }
 
