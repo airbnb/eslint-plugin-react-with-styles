@@ -14,8 +14,7 @@ describe('all rule files are exported by the plugin', () => {
     it(`exports ${ruleName}`, () => {
       expect(plugin.rules[ruleName])
         // eslint-disable-next-line global-require, import/no-dynamic-require
-        .to.eql(require(path.join('../lib/rules', ruleName))
-      );
+        .to.eql(require(path.join('../lib/rules', ruleName)));
     });
   });
 });
