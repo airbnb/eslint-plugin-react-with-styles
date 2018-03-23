@@ -32,6 +32,7 @@ describe('configurations', () => {
 
   it('has correctly-formatted rule names in the "recommended" configuration', () => {
     Object.keys(plugin.configs.recommended.rules).forEach((configName) => {
+      if (configName === 'no-restricted-imports') return;
       expect(configName.startsWith('react-with-styles/')).to.equal(true);
     });
   });
@@ -53,6 +54,7 @@ describe('configurations', () => {
 
   it('has all "recommended" rule names that match rule names', () => {
     Object.keys(plugin.configs.recommended.rules).forEach((configName) => {
+      if (configName === 'no-restricted-imports') return;
       const ruleName = configName.substring('react-with-styles/'.length);
       const rule = plugin.rules[ruleName];
 
