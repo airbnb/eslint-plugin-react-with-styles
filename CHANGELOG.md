@@ -1,3 +1,6 @@
+## v1.1.2
+- Remove css global import requirement
+
 ## v1.1.1
 
 - Support for ESLint v4.
