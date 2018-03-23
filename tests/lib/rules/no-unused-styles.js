@@ -486,6 +486,21 @@ ruleTester.run('no-unused-styles', rule, {
         }))(Foo);
       `.trim(),
     },
+
+    {
+      parserOptions,
+      code: `
+        function Foo({ css, styles }) {
+          return (
+            <div {...css(styles.foo)} />
+          );
+        }
+
+        export default withStyles(() => ({
+          foo: {},
+        }))(Foo);
+      `.trim(),
+    },
   ],
 
   invalid: [
@@ -617,6 +632,26 @@ ruleTester.run('no-unused-styles', rule, {
       `.trim(),
       errors: [{
         message: 'Style `foo` is unused',
+        type: 'Property',
+      }],
+    },
+
+    {
+      parserOptions,
+      code: `
+        function Foo({ css, styles }) {
+          return (
+            <div {...css(styles.foo)} />
+          );
+        }
+
+        export default withStyles(() => ({
+          foo: {},
+          bar: {},
+        }))(Foo);
+      `.trim(),
+      errors: [{
+        message: 'Style `bar` is unused',
         type: 'Property',
       }],
     },
