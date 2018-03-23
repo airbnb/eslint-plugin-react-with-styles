@@ -54,54 +54,6 @@ ruleTester.run('only-spread-css', rule, {
         <div {...css(foo)} {...bar()} />
       `.trim(),
     },
-
-    {
-      parserOptions,
-      code: `
-        import { css } from 'somethingElse';
-        <div {...css(foo)} className="foo" />
-      `.trim(),
-    },
-
-    {
-      parserOptions,
-      code: `
-        import { css } from 'somethingElse';
-        <div {...css(foo)} style={{ color: 'red' }} />
-      `.trim(),
-    },
-
-    {
-      parserOptions,
-      code: `
-        const { css } = require('somethingElse');
-        <div {...css(foo)} className="foo" />
-      `.trim(),
-    },
-
-    {
-      parserOptions,
-      code: `
-        const { css } = require('somethingElse');
-        <div {...css(foo)} style={{ color: 'red' }} />
-      `.trim(),
-    },
-
-    {
-      parserOptions,
-      code: `
-        require(foo);
-        <div {...css(foo)} style={{ color: 'red' }} />
-      `.trim(),
-    },
-
-    {
-      parserOptions,
-      code: `
-        require();
-        <div {...css(foo)} style={{ color: 'red' }} />
-      `.trim(),
-    },
   ],
 
   invalid: [
@@ -222,18 +174,6 @@ ruleTester.run('only-spread-css', rule, {
     {
       parserOptions,
       code: `
-        import { css as bar } from 'withStyles';
-        <div {...bar(foo)} className="foo" />
-      `.trim(),
-      errors: [{
-        message: 'Do not use `className` with `{...bar()}`.',
-        type: 'JSXAttribute',
-      }],
-    },
-
-    {
-      parserOptions,
-      code: `
         const { css } = require('withStyles');
         <div {...css(foo)} className="foo" />
       `.trim(),
@@ -251,18 +191,6 @@ ruleTester.run('only-spread-css', rule, {
       `.trim(),
       errors: [{
         message: 'Do not use `style` with `{...css()}`.',
-        type: 'JSXAttribute',
-      }],
-    },
-
-    {
-      parserOptions,
-      code: `
-        const { css: bar } = require('withStyles');
-        <div {...bar(foo)} className="foo" />
-      `.trim(),
-      errors: [{
-        message: 'Do not use `className` with `{...bar()}`.',
         type: 'JSXAttribute',
       }],
     },
