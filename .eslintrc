@@ -5,6 +5,7 @@
   },
   "rules": {
     "strict": 0,
+    "prefer-destructuring": 0,
     "comma-dangle": [2, {
       "arrays": "always-multiline",
       "objects": "always-multiline",

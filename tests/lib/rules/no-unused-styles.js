@@ -5,9 +5,9 @@
 
 'use strict';
 
-const rule = require('../../../lib/rules/no-unused-styles');
-
 const RuleTester = require('eslint').RuleTester;
+
+const rule = require('../../../lib/rules/no-unused-styles');
 
 const parserOptions = {
   ecmaVersion: 6,

@@ -6,9 +6,9 @@
 
 'use strict';
 
-const rule = require('../../../lib/rules/only-spread-css');
-
 const RuleTester = require('eslint').RuleTester;
+
+const rule = require('../../../lib/rules/only-spread-css');
 
 const parserOptions = {
   ecmaVersion: 6,
