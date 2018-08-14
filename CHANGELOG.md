@@ -1,3 +1,6 @@
+## v2.1.0
+- Add support for eslint v5
+
 ## v2.0.0
 - Remove `findImportCSSFromWithStylesImportDeclaration` and `findRequireCSSFromWithStylesCallExpression` utils
 - Remove `cssNoRTL-only`
