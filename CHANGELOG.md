@@ -1,3 +1,6 @@
+## v2.2.0
+- Add support for eslint v6
+
 ## v2.1.0
 - Add support for eslint v5
 
