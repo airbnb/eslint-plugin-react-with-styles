@@ -10,10 +10,9 @@ const RuleTester = require('eslint').RuleTester;
 const rule = require('../../../lib/rules/no-unused-styles');
 
 const parserOptions = {
-  ecmaVersion: 6,
+  ecmaVersion: 2019,
   ecmaFeatures: {
     jsx: true,
-    experimentalObjectRestSpread: true,
   },
   sourceType: 'module',
 };
