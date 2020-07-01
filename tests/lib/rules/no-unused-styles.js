@@ -360,7 +360,6 @@ ruleTester.run('no-unused-styles', rule, {
       `.trim(),
     },
 
-
     {
       parserOptions,
       code: `
