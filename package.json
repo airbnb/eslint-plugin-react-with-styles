@@ -43,14 +43,14 @@
   },
   "homepage": "https://github.com/airbnb/eslint-plugin-react-with-styles#readme",
   "peerDependencies": {
-    "eslint": "^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0"
+    "eslint": "^2 || ^3 || ^4 || ^5 || ^6 || ^7 || ^8"
   },
   "devDependencies": {
     "aud": "^2.0.0",
     "chai": "^4.2.0",
-    "eslint": "^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2",
+    "eslint": "^2 || ^3 || ^4 || ^5 || ^6 || ^7 || ^8",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
     "in-publish": "^2.0.0",
     "ls-engines": "^0.6.4",
     "mocha": "^5.2.0",
