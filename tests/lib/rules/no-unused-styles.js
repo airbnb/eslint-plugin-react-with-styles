@@ -6,11 +6,13 @@
 'use strict';
 
 const RuleTester = require('eslint').RuleTester;
+const semver = require('semver');
+const eslintVersion = require('eslint/package.json').version;
 
 const rule = require('../../../lib/rules/no-unused-styles');
 
 const parserOptions = {
-  ecmaVersion: 2019,
+  ecmaVersion: 6,
   ecmaFeatures: {
     jsx: true,
   },
@@ -19,8 +21,7 @@ const parserOptions = {
 
 const ruleTester = new RuleTester();
 ruleTester.run('no-unused-styles', rule, {
-
-  valid: [
+  valid: [].concat(
     {
       parserOptions,
       code: `
@@ -411,8 +412,8 @@ ruleTester.run('no-unused-styles', rule, {
       `.trim(),
     },
 
-    { // TODO handle object spread better?
-      parserOptions,
+    semver.satisfies('>= 5', eslintVersion) ? { // TODO handle object spread better?
+      parserOptions: Object.assign({}, parserOptions, { ecmaVersion: 2019 }),
       code: `
         import { css } from 'withStyles';
 
@@ -426,7 +427,7 @@ ruleTester.run('no-unused-styles', rule, {
           ...foo,
         }))(Foo);
       `.trim(),
-    },
+    } : [],
 
     {
       parserOptions,
@@ -498,8 +499,8 @@ ruleTester.run('no-unused-styles', rule, {
           foo: {},
         }))(Foo);
       `.trim(),
-    },
-  ],
+    }
+  ),
 
   invalid: [
     {
