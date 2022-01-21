@@ -54,5 +54,8 @@
   },
   "dependencies": {
     "has": "^1.0.3"
+  },
+  "engines": {
+    "node": ">= 4"
   }
 }
