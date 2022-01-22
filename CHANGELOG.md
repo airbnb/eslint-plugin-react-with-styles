@@ -1,3 +1,7 @@
+## v2.4.0
+- Add support for eslint v8
+- Add engines for node >= 4
+
 ## v2.3.0
 - Add support for eslint v7
 
